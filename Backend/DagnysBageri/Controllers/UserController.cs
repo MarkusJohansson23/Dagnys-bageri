@@ -79,7 +79,10 @@ namespace DagnysBageri.Controllers
         public async Task<IActionResult> Patch(int id, [FromBody] PutViewModel put)
         {
             User model =  await _unitOfWork.UserRepository.FindUserById(id);
-
+            if (model == null)
+            {
+                return NotFound($"Could not find a user with an id of: {id}");
+            }
             model.FirstName = put.FirstName;
             model.LastName = put.LastName;
             model.Email = put.Email;
@@ -97,7 +100,10 @@ namespace DagnysBageri.Controllers
         public async Task<IActionResult> Patch(int id, [FromBody] PatchViewModel patch)
         {
             User model =  await _unitOfWork.UserRepository.FindUserById(id);
-
+            if (model == null)
+            {
+                return NotFound($"Could not find a user with an id of: {id}");
+            }
             model.LastLogin = patch.LastLogin;
 
             if (await _unitOfWork.UserRepository.UpdateUserAsync(model))
