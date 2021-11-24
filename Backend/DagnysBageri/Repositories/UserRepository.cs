@@ -35,5 +35,10 @@ namespace DagnysBageri.Repositories
         {
             throw new NotImplementedException();
         }
+
+        public Task<User> FindUserById(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

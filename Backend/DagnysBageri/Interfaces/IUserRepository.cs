@@ -12,5 +12,6 @@ namespace DagnysBageri.Interfaces
         Task<bool> RemoveUserAsync(User user);
         Task<bool> UpdateUserAsync (User user);
         Task<IList<User>> ListAllUsersAsync();
+        Task<User> FindUserById(int id);
     }
 }
