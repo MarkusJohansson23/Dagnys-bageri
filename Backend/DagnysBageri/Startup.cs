@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DagnysBageri.Data;
+using DagnysBageri.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -32,6 +33,9 @@ namespace DagnysBageri
             {
                 opt.UseSqlite(_config.GetConnectionString("DefaultConnection"));
             });
+
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddCors();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
