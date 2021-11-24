@@ -25,13 +25,12 @@ namespace DagnysBageri.Controllers
         public async Task<IActionResult> AddUser(PostViewModel post)
         {
             User model = new User {
-                Id = 0,
                 FirstName = post.FirstName,
                 LastName = post.LastName,
                 Email = post.Email,
                 Password = post.Password,
                 Role = post.Role,
-                CreatedDate = post.CreatedDate
+                CreatedDate = DateTime.UtcNow
             };
 
             if (await _unitOfWork.UserRepository.AddUserAsync(model))
