@@ -76,7 +76,7 @@ namespace DagnysBageri.Controllers
 
             return Ok(viewModels);
         }
-        [HttpPut]
+        [HttpPut("{id}")]
         public async Task<IActionResult> Patch(int id, [FromBody] PutViewModel put)
         {
             User model =  await _unitOfWork.UserRepository.FindUserById(id);
@@ -94,7 +94,7 @@ namespace DagnysBageri.Controllers
             return StatusCode(500, $"Something went wrong when trying to update the details of user by id ({model.Id}).");
 
         }
-        [HttpPatch]
+        [HttpPatch("{id}")]
         public async Task<IActionResult> Patch(int id, [FromBody] PatchViewModel patch)
         {
             User model =  await _unitOfWork.UserRepository.FindUserById(id);
@@ -107,6 +107,22 @@ namespace DagnysBageri.Controllers
 
             return StatusCode(500, $"Something went wrong when trying to update the LastLogin of user by id ({model.Id}).");
 
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            User model = await _unitOfWork.UserRepository.FindUserById(id);
+
+            if (model == null)
+            {
+                return NotFound($"Could not find a user with an id of: {id}");
+            }
+            if (await _unitOfWork.UserRepository.RemoveUserAsync(model))
+                if (await _unitOfWork.Complete())
+                return NoContent();
+
+            return StatusCode(500, "An error occured when trying to remove a user.");
         }
     }
 
