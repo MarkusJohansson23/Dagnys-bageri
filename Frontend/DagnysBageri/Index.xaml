@@ -1,0 +1,11 @@
+@page
+@model Frontend.DagnysBageri.Index
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    
+</div>
