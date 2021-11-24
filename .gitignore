@@ -138,6 +138,15 @@ _TeamCity*
 # DotCover is a Code Coverage Tool
 *.dotCover
 
+# VS Code files for those working on multiple tools
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+**/.vscode/
+
 # AxoCover is a Code Coverage Tool
 .axoCover/*
 !.axoCover/settings.json
