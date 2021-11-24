@@ -61,7 +61,46 @@ namespace DagnysBageri.Repositories
 
     public async Task<IList<User>> ListAllUsersAsync()
     {
+<<<<<<< HEAD
       return await _context.Users.ToListAsync();
+=======
+        private readonly UserContext _context;
+
+        public UserRepository(UserContext context)
+        {
+            _context = context;
+        }
+
+        public Task<bool> AddUserAsync(User user)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> RemoveUserAsync(User user)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> UpdateUserAsync(User user)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IList<User>> ListAllUsersAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<User> FindUserById(int id)
+        {
+            throw new NotImplementedException();
+        }
+>>>>>>> b96b0e77d64bf659c24a4d01984f958010a8206e
+    }
+
+    public Task<User> FindUserById(int id)
+    {
+      throw new NotImplementedException();
     }
   }
 }

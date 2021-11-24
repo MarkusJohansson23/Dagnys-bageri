@@ -5,7 +5,7 @@ namespace DagnysBageri.Interfaces
 {
     public interface IUnitOfWork
     {
-        UserRepository UserRepository { get; }
+        IUserRepository UserRepository { get; }
         Task<bool> Complete();
     }
 }
