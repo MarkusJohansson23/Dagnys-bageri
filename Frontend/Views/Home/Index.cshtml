@@ -2,7 +2,36 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container center mt-5" style="margin: auto; width: 25%; padding: 10px">
+    <form>
+        <div class="form-row align-items-center">
+            <div class="col-auto">
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">🧙‍♂️</div>
+                    </div>
+                    <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Användarnamn">
+                </div>
+            </div>
+            <div class="col-auto">
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">🗝</div>
+                    </div>
+                    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Lösenord">
+                </div>
+            </div>
+            <div class="col-auto">
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" id="autoSizingCheck">
+                    <label class="form-check-label" for="autoSizingCheck">
+                        Kom ihåg mig
+                    </label>
+                </div>
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-2">Logga in</button>
+            </div>
+        </div>
+    </form>
 </div>
