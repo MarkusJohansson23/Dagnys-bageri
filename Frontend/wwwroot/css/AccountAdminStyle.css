@@ -1,0 +1,12 @@
+.adminPage-ul{
+    list-style-type: none;
+    text-align: center;
+}
+.btn-li{
+    padding: 5px;
+}
+.title{
+    font-size:xxx-large;
+    text-align: center;
+    padding-bottom: 20px;
+}
