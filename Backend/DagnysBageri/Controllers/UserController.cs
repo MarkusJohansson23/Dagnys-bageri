@@ -75,6 +75,7 @@ namespace DagnysBageri.Controllers
 
             return Ok(viewModels);
         }
+
         [HttpPut("{id}")]
         public async Task<IActionResult> Patch(int id, [FromBody] PutViewModel put)
         {
