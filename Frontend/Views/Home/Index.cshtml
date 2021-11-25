@@ -1,16 +1,18 @@
-﻿@{
+﻿@model LogInModel
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="container mt-5" style="margin: auto; width: 25%; padding: 10px">
-    <form>
+    <form asp-action="LogIn" method="post">
         <div class="form-row align-items-center">
             <div class="col-auto">
                 <div class="input-group mb-2">
                     <div class="input-group-prepend">
                         <div class="input-group-text">🧙‍♂️</div>
                     </div>
-                    <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Användarnamn">
+                    <input asp-for="Username" type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Användarnamn">
                 </div>
             </div>
             <div class="col-auto">
@@ -18,7 +20,7 @@
                     <div class="input-group-prepend">
                         <div class="input-group-text">🗝</div>
                     </div>
-                    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Lösenord">
+                    <input asp-for="Password" type="text" class="form-control" id="inlineFormInputGroup" placeholder="Lösenord">
                 </div>
             </div>
             <div class="col-auto">

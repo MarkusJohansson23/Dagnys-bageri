@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Dagnys_bageri.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Dagnys_bageri.Models;
+using System.Diagnostics;
 
 namespace Dagnys_bageri.Controllers
 {
@@ -23,6 +19,11 @@ namespace Dagnys_bageri.Controllers
             return View();
         }
         public IActionResult AccountAdminPage()
+        {
+            return View();
+        }
+
+        public IActionResult LogIn()
         {
             return View();
         }
