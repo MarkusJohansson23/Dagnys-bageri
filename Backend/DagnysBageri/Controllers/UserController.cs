@@ -19,11 +19,23 @@ namespace DagnysBageri.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        [HttpPost("login/{token}")]
+        [HttpPost("login")]
         public async Task<IActionResult> Login(LoginViewModel viewModel)
         {
-            
-            return null;
+            User model = await _unitOfWork.UserRepository.GetEmailAsync(viewModel.Email);
+            if (model == null)
+            {
+                return NotFound("Invalid email or password was entered");
+            }
+
+            if (model.Password.Equals(viewModel.Password))
+            {
+                return Ok();
+            }
+            else
+            {
+                return NotFound("Invalid email or password was entered");
+            }
         }
 
         [HttpPost()]
