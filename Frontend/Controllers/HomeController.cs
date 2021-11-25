@@ -28,6 +28,10 @@ namespace Dagnys_bageri.Controllers
         {
             return View();
         }
+        public IActionResult MyPage()
+        {
+            return View();
+        }
 
         public async Task<IActionResult> LogIn(LogInModel credentials)
         {
