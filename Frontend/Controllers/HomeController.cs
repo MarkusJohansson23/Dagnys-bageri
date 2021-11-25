@@ -40,7 +40,7 @@ namespace Dagnys_bageri.Controllers
                 return View("Index");
             }
 
-            var url = "https://localhost:5001/api/login";
+            var url = "https://localhost:5001/api/user";
 
             using var client = new HttpClient();
 
