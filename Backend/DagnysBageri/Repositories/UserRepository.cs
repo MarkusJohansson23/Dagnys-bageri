@@ -64,5 +64,9 @@ namespace DagnysBageri.Repositories
         return await Task.FromResult<bool>(false);
       }
     }
+    public async Task<User> GetEmailAsync(string email)
+    {
+      return await _context.Users.FirstOrDefaultAsync(e => e.Email.ToLower() == email.ToLower());
+    }
   }
 }
