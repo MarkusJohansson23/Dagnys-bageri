@@ -19,6 +19,13 @@ namespace DagnysBageri.Controllers
             _unitOfWork = unitOfWork;
         }
 
+        [HttpPost("login/{token}")]
+        public async Task<IActionResult> Login(LoginViewModel viewModel)
+        {
+            
+            return null;
+        }
+
         [HttpPost()]
         public async Task<IActionResult> AddUser(PostViewModel post)
         {
