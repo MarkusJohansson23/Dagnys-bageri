@@ -2,13 +2,12 @@
 using DagnysBageri.Interfaces;
 using DagnysBageri.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace DagnysBageri.Repositories
 {
-  public class UserRepository : IUserRepository
+    public class UserRepository : IUserRepository
   {
     private readonly UserContext _context;
 
@@ -27,7 +26,6 @@ namespace DagnysBageri.Repositories
       catch
       {
         return false;
-
       }
     }
 
@@ -51,7 +49,6 @@ namespace DagnysBageri.Repositories
       catch
       {
         return await Task.FromResult<bool>(false);
-
       }
     }
 
@@ -65,8 +62,11 @@ namespace DagnysBageri.Repositories
       catch
       {
         return await Task.FromResult<bool>(false);
-
       }
+    }
+    public async Task<User> GetEmailAsync(string email)
+    {
+      return await _context.Users.FirstOrDefaultAsync(e => e.Email.ToLower() == email.ToLower());
     }
   }
 }

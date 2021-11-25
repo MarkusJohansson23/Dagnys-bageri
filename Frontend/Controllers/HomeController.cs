@@ -1,11 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+using Dagnys_bageri.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Dagnys_bageri.Models;
+using System.Diagnostics;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text;
+using System.Text.Json;
+using System.Threading.Tasks;
 
 namespace Dagnys_bageri.Controllers
 {
@@ -24,6 +26,29 @@ namespace Dagnys_bageri.Controllers
         }
         public IActionResult AccountAdminPage()
         {
+            return View();
+        }
+        public IActionResult MyPage()
+        {
+            return View();
+        }
+
+        public async Task<IActionResult> LogIn(LogInModel credentials)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View("Index");
+            }
+
+            var url = "https://localhost:5001/api/user";
+
+            using var client = new HttpClient();
+
+            var content = new StringContent(JsonSerializer.Serialize(credentials), Encoding.UTF8);
+            content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+            var response = await client.PostAsync(url, content);
+
             return View();
         }
 
