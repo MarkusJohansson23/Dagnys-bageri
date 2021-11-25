@@ -78,7 +78,7 @@ namespace DagnysBageri.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Patch(int id, [FromBody] PutViewModel put)
+        public async Task<IActionResult> Put(int id, [FromBody] PutViewModel put)
         {
             User model = await _unitOfWork.UserRepository.FindUserById(id);
             if (model == null)
