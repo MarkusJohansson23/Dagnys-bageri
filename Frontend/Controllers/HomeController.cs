@@ -22,6 +22,10 @@ namespace Dagnys_bageri.Controllers
         {
             return View();
         }
+        public IActionResult AccountAdminPage()
+        {
+            return View();
+        }
 
         public IActionResult Privacy()
         {
