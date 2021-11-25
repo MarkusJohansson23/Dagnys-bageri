@@ -49,7 +49,12 @@ namespace Dagnys_bageri.Controllers
 
             var response = await client.PostAsync(url, content);
 
-            return View();
+            if (response.IsSuccessStatusCode)
+            {
+                return View("MyPage");
+            }
+
+            return View("Index");
         }
 
         public IActionResult Privacy()
