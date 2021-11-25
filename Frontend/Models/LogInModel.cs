@@ -5,9 +5,9 @@ namespace Dagnys_bageri.Models
     public class LogInModel
     {
         [Required]
-        public string Username { get; set; }
+        public string Email { get; set; }
 
         [Required]
-        public string Email { get; set; }
+        public string Password { get; set; }
     }
 }
